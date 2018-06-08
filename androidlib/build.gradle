@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -28,7 +27,5 @@ dependencies {
     api "com.alibaba:arouter-api:${rootProject.arouterApiVersion}"
 
     api "com.squareup.okhttp3:okhttp:${rootProject.okhttpVersion}"
-    api "com.squareup.okio:okio:${rootProject.okioVersion}"
     api "com.google.code.gson:gson:${rootProject.gsonVersion}"
-    api "io.reactivex:rxandroid:${rootProject.rxandroidVersion}"
 }
