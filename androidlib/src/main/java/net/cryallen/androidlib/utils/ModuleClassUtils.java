@@ -66,11 +66,11 @@ public class ModuleClassUtils {
             }
 
             if (objectList.size() == 0) {
-                CLog.e(TAG, "No files were found, check your configuration please!");
+                Log.e(TAG, "No files were found, check your configuration please!");
             }
         } catch (Exception e) {
             e.getStackTrace();
-            CLog.e(TAG, "getObjectsWithInterface error, " + e.getMessage());
+            Log.e(TAG, "getObjectsWithInterface error, " + e.getMessage());
         }
 
         return objectList;
@@ -102,11 +102,11 @@ public class ModuleClassUtils {
             }
 
             if (objectList.size() == 0) {
-                CLog.e(TAG, "No files were found, check your configuration please!");
+                Log.e(TAG, "No files were found, check your configuration please!");
             }
         } catch (Exception e) {
             e.getStackTrace();
-            CLog.e(TAG, "getObjectsWithInterface error, " + e.getMessage());
+            Log.e(TAG, "getObjectsWithInterface error, " + e.getMessage());
         }
 
         return objectList;
@@ -140,7 +140,7 @@ public class ModuleClassUtils {
                 }
             }
             catch (Throwable ignore) {
-                CLog.e(TAG, "Scan map file in dex files made error. "+ ignore);
+                Log.e(TAG, "Scan map file in dex files made error. "+ ignore);
             }
             finally {
                 if (null != dexfile) {
@@ -152,7 +152,7 @@ public class ModuleClassUtils {
             }
         }
 
-        CLog.d(TAG, "Filter " + classNames.size() + " classes by packageName <" + packageName + ">");
+        Log.d(TAG, "Filter " + classNames.size() + " classes by packageName <" + packageName + ">");
         return classNames;
     }
 
@@ -195,7 +195,7 @@ public class ModuleClassUtils {
             }
         }
 
-        if (AppUtil.isAppDebug(context)) {
+        if (AppUtils.isAppDebug(context)) {
             // Search instant run support only debuggable
             sourcePaths.addAll(tryLoadInstantRunDexFile(applicationInfo));
         }
