@@ -40,7 +40,7 @@ public abstract class BaseMVPCompatActivity <P extends BasePresenter> extends Ba
 		super.onDestroy();
 		if (mPresenter != null) {
 			mPresenter.detachMV();
-			//Logger.d("detach M V success.");
+			Logger.d("detach M V success.");
 		}
 	}
 

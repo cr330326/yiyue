@@ -4,13 +4,16 @@ import android.support.annotation.NonNull;
 
 import net.cryallen.androidlib.manager.RxManager;
 
+import java.lang.ref.WeakReference;
+
 /***
  Created by chenran on 2018/6/29.
  ***/
 public abstract class BasePresenter <M, V> {
 
 	protected M mIModel;
-	protected V mIView;
+	//解决MVP模式中，Presenter持有IView层容易引起的内存泄漏问题，用弱引用来解决
+	private WeakReference<V> weakRefView;
 	protected RxManager mRxManager = new RxManager();
 
 	/**
@@ -27,7 +30,7 @@ public abstract class BasePresenter <M, V> {
 	 */
 	public void attachMV(@NonNull V v) {
 		this.mIModel = getModel();
-		this.mIView = v;
+		this.weakRefView = new WeakReference<V>(v);
 		this.onStart();
 	}
 
@@ -36,8 +39,12 @@ public abstract class BasePresenter <M, V> {
 	 */
 	public void detachMV() {
 		mRxManager.unSubscribe();
-		mIView = null;
 		mIModel = null;
+		if(isAttach())
+		{
+			weakRefView.clear();
+			weakRefView = null;
+		}
 	}
 
 	/**
@@ -46,4 +53,13 @@ public abstract class BasePresenter <M, V> {
 	 * 实现类实现绑定完成后的逻辑,例如数据初始化等,界面初始化, 更新等
 	 */
 	public abstract void onStart();
+
+	public V obtainView(){
+		return isAttach() ? weakRefView.get():null;
+	}
+
+	public boolean isAttach()
+	{
+		return weakRefView != null && weakRefView.get() != null;
+	}
 }
