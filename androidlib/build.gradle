@@ -62,33 +62,33 @@ dependencies {
     api "com.github.bumptech.glide:okhttp-integration:$rootProject.glideokhttpVersion"
     api "jp.wasabeef:glide-transformations:$rootProject.glideTransformationVersion"
 
-    //Butterknife
+    // Butterknife
     api "com.jakewharton:butterknife:$rootProject.butterknifeVersion"
 
-    //fragmentation
+    // fragmentation
     api "me.yokeyword:fragmentation:$rootProject.fragmentationVersion"
 
-    //Logger
+    // Logger
     api "com.orhanobut:logger:$rootProject.loggerVersion"
 
-    //circle imageview
+    // circle imageview
     api "de.hdodenhof:circleimageview:$rootProject.circleImageviewVersion"
 
-    //BaseRecyclerViewAdapterHelper
+    // BaseRecyclerViewAdapterHelper
     api "com.github.CymChad:BaseRecyclerViewAdapterHelper:$rootProject.BaseRecyclerViewAdapterHelperVersion"
 
-    //SwitchButton
+    // SwitchButton
     api "com.kyleduo.switchbutton:library:$rootProject.SwtichButtonVersion"
 
-    //PhotoView
+    // PhotoView
     api "com.bm.photoview:library:$rootProject.PhotoViewVersion"
 
     api "com.cocosw:bottomsheet:$rootProject.BottomSheetVersion"
 
-    //permissions
+    // permissions
     api "com.tbruyelle.rxpermissions2:rxpermissions:$rootProject.rxPerssionsVersion"
 
-    //Bugly
+    // Bugly
     api 'com.tencent.bugly:crashreport:latest.release'
 
 }
