@@ -83,6 +83,7 @@ dependencies {
     // PhotoView
     api "com.bm.photoview:library:$rootProject.PhotoViewVersion"
 
+    // BottomSheet
     api "com.cocosw:bottomsheet:$rootProject.BottomSheetVersion"
 
     // permissions
