@@ -97,9 +97,6 @@ dependencies {
     // permissions
     api "com.tbruyelle.rxpermissions2:rxpermissions:$rootProject.rxPerssionsVersion"
 
-    // JOOR
-    api "org.jooq:joor:$rootProject.JoorVersion"
-
     // Bugly
     api 'com.tencent.bugly:crashreport:latest.release'
 

@@ -1,5 +1,11 @@
 apply plugin: 'com.android.application'
 
+def buildTime() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMdd')
+    return formattedDate
+}
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -20,10 +26,22 @@ android {
         }
     }
     buildTypes {
+        debug {
+            minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    lintOptions{
+        checkReleaseBuilds false
+        abortOnError false
     }
 }
 

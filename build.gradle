@@ -78,5 +78,4 @@ ext {
     SwtichButtonVersion = '1.4.6'
     PhotoViewVersion = '1.4.1'
     BottomSheetVersion = '1.3.0@aar'
-    JoorVersion = '0.9.7'
 }
