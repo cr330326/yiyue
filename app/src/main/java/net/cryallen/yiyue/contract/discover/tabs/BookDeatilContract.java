@@ -1,4 +1,4 @@
-package net.cryallen.yiyue.contract.book;
+package net.cryallen.yiyue.contract.discover.tabs;
 
 import net.cryallen.androidlib.base.BasePresenter;
 import net.cryallen.androidlib.base.IBaseActivity;

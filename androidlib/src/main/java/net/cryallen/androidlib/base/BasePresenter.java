@@ -13,7 +13,7 @@ public abstract class BasePresenter <M, V> {
 
 	protected M mIModel;
 	//解决MVP模式中，Presenter持有IView层容易引起的内存泄漏问题，用弱引用来解决
-	private WeakReference<V> weakRefView;
+	protected WeakReference<V> weakRefView;
 	protected RxManager mRxManager = new RxManager();
 
 	/**
