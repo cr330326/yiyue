@@ -56,7 +56,7 @@ public class RxHelper {
      * 生成Observable
      *
      * @param t
-     * @return Flowable
+     * @return Observable
      */
     public static <T> Observable<T> createObservable(final T t) {
         return Observable.create(new ObservableOnSubscribe<T>() {

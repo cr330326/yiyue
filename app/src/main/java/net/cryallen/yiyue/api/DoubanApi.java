@@ -48,7 +48,6 @@ public interface DoubanApi {
 	 * @param start 从多少开始，如从"0"开始
 	 * @param count 一次请求的数目 最多100
 	 */
-
 	@GET("v2/book/search")
 	Observable<BookListBean> getBookListWithTag(@Query("tag") String tag, @Query("start") int
 			start, @Query("count") int count);
