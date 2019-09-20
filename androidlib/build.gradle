@@ -83,7 +83,7 @@ dependencies {
     api "de.hdodenhof:circleimageview:$rootProject.circleImageviewVersion"
 
     // BaseRecyclerViewAdapterHelper
-    api "com.github.CymChad:BaseRecyclerViewAdapterHelper:$rootProject.BaseRecyclerViewAdapterHelperVersion"
+    //api "com.github.CymChad:BaseRecyclerViewAdapterHelper:$rootProject.BaseRecyclerViewAdapterHelperVersion"
 
     // SwitchButton
     api "com.kyleduo.switchbutton:library:$rootProject.SwtichButtonVersion"

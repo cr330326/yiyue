@@ -43,7 +43,7 @@ import okhttp3.Response;
 public class MyOkHttp {
 
 	private OkHttpClient client;
-	private static MyOkHttp instance;
+	private volatile static MyOkHttp instance;
 
 	public MyOkHttp() {
 		client = new OkHttpClient();
