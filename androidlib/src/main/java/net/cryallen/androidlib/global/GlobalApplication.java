@@ -3,11 +3,7 @@ package net.cryallen.androidlib.global;
 import android.app.Application;
 import android.content.Context;
 import android.os.Handler;
-
-import com.orhanobut.logger.LogLevel;
-import com.orhanobut.logger.Logger;
-
-import net.cryallen.androidlib.BuildConfig;
+import net.cryallen.androidlib.utils.LoggerUtils;
 
 /**
  *
@@ -32,7 +28,7 @@ public class GlobalApplication extends Application {
 		context = getApplicationContext();
 		handler = new Handler();
 		mainThreadId = android.os.Process.myTid();
-		Logger.init(LOG_TAG).logLevel(BuildConfig.IS_SHOW_LOG ? LogLevel.FULL : LogLevel.NONE);
+		LoggerUtils.init(true);
 	}
 
 	/**

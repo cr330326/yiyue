@@ -31,6 +31,11 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     publishNonDefault true
 }
 
@@ -83,7 +88,7 @@ dependencies {
     api "de.hdodenhof:circleimageview:$rootProject.circleImageviewVersion"
 
     // BaseRecyclerViewAdapterHelper
-    api "com.github.CymChad:BaseRecyclerViewAdapterHelper:$rootProject.BaseRecyclerViewAdapterHelperVersion"
+    //api "com.github.CymChad:BaseRecyclerViewAdapterHelper:$rootProject.BaseRecyclerViewAdapterHelperVersion"
 
     // SwitchButton
     api "com.kyleduo.switchbutton:library:$rootProject.SwtichButtonVersion"
