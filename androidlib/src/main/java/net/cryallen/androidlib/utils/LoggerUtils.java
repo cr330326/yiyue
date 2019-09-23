@@ -23,7 +23,7 @@ public final class LoggerUtils {
 	 *
 	 * @param isLogEnable 是否打印log
 	 */
-	public static void init(final boolean isLogEnable) {
+	public static void init(boolean isLogEnable) {
 		FormatStrategy formatStrategy = PrettyFormatStrategy.newBuilder()
 				.showThreadInfo(true)  // (Optional) Whether to show thread info or not. Default true
 				.methodCount(2)         // (Optional) How many method line to show. Default 2
@@ -52,6 +52,10 @@ public final class LoggerUtils {
 	public static void w(String message, Throwable e) {
 		String info = e != null ? e.toString() : "null";
 		Logger.w(message + "：" + info);
+	}
+
+	public static void e(String message){
+		Logger.e(message);
 	}
 
 	public static void e(String message, Throwable e) {

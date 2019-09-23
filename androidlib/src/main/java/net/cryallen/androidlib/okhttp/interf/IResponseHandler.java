@@ -1,10 +1,12 @@
-package net.cryallen.androidlib.myokhttp.response;
+package net.cryallen.androidlib.okhttp.interf;
+
+import okhttp3.Response;
 
 /**
  * 响应接口
- * Created by chenran3 on 2017/10/25.
  */
 public interface IResponseHandler {
+    void onSuccess(Response response);
 
     void onFailure(int statusCode, String error_msg);
 

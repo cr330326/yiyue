@@ -1,4 +1,4 @@
-package net.cryallen.androidlib.myokhttp.response;
+package net.cryallen.androidlib.okhttp.response;
 
 import java.io.File;
 
@@ -8,7 +8,11 @@ import java.io.File;
  */
 public abstract class DownloadResponseHandler {
 
-    public abstract void onFinish(File download_file);
+    public void onStart(long totalBytes) { }
+
+    public void onCancel() { }
+
+    public abstract void onFinish(File downloadFile);
     public abstract void onProgress(long currentBytes, long totalBytes);
     public abstract void onFailure(String error_msg);
 }

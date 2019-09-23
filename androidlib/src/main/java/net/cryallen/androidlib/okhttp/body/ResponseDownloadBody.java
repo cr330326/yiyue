@@ -1,6 +1,6 @@
-package net.cryallen.androidlib.myokhttp.body;
+package net.cryallen.androidlib.okhttp.body;
 
-import net.cryallen.androidlib.myokhttp.response.DownloadResponseHandler;
+import net.cryallen.androidlib.okhttp.response.DownloadResponseHandler;
 
 import java.io.IOException;
 
@@ -16,13 +16,12 @@ import okio.Source;
  * 重写responsebody 设置下载进度监听
  * Created by chenran3 on 2017/10/25.
  */
-public class ResponseProgressBody extends ResponseBody {
-
+public class ResponseDownloadBody extends ResponseBody {
     private ResponseBody mResponseBody;
     private DownloadResponseHandler mDownloadResponseHandler;
     private BufferedSource bufferedSource;
 
-    public ResponseProgressBody(ResponseBody responseBody, DownloadResponseHandler downloadResponseHandler) {
+    public ResponseDownloadBody(ResponseBody responseBody, DownloadResponseHandler downloadResponseHandler) {
         this.mResponseBody = responseBody;
         this.mDownloadResponseHandler = downloadResponseHandler;
     }
@@ -46,13 +45,12 @@ public class ResponseProgressBody extends ResponseBody {
     }
 
     private Source source(Source source) {
-
         return new ForwardingSource(source) {
-
             long totalBytesRead;
 
             @Override
             public long read(Buffer sink, long byteCount) throws IOException {
+                //这个的进度应该是读取response每次内容的进度，在写文件进度之前 所以暂时以写完文件的进度为准
                 long bytesRead = super.read(sink, byteCount);
                 totalBytesRead += ((bytesRead != -1) ? bytesRead : 0);
                 if (mDownloadResponseHandler != null) {

@@ -1,5 +1,5 @@
-package net.cryallen.androidlib.myokhttp.body;
-import net.cryallen.androidlib.myokhttp.response.IResponseHandler;
+package net.cryallen.androidlib.okhttp.body;
+import net.cryallen.androidlib.okhttp.interf.IResponseHandler;
 
 import java.io.IOException;
 
@@ -15,13 +15,13 @@ import okio.Sink;
  * 重写request body 设置上传进度监听
  * Created by chenran3 on 2017/10/25.
  */
-public class ProgressRequestBody extends RequestBody {
+public class ResponseProgressBody extends RequestBody {
 
     private IResponseHandler mResponseHandler;      //回调监听
     private RequestBody mRequestBody;
     private BufferedSink mBufferedSink;
 
-    public ProgressRequestBody(RequestBody requestBody, IResponseHandler responseHandler) {
+    public ResponseProgressBody(RequestBody requestBody, IResponseHandler responseHandler) {
         this.mResponseHandler = responseHandler;
         this.mRequestBody = requestBody;
     }
