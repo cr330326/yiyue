@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 
 import net.cryallen.androidlib.R;
 
@@ -152,8 +153,8 @@ public class DisplayUtils {
                 .load(imgUrl)
                 .error(R.drawable.stackblur_default)
                 .placeholder(R.drawable.stackblur_default)
-                .crossFade(300)
-                .bitmapTransform(new BlurTransformation(context, 23, 4))
+                .transition(DrawableTransitionOptions.withCrossFade(300))
+                .transform(new BlurTransformation( 23, 4))
                 .into(imageView);
     }
 
@@ -170,8 +171,8 @@ public class DisplayUtils {
                 .load(file)
                 .error(R.drawable.stackblur_default)
                 .placeholder(R.drawable.stackblur_default)
-                .crossFade(300)
-                .bitmapTransform(new BlurTransformation(context, 23, 4))
+                .transition(DrawableTransitionOptions.withCrossFade(300))
+                .transform(new BlurTransformation(23, 4))
                 .into(imageView);
     }
 
@@ -188,8 +189,8 @@ public class DisplayUtils {
                 .load(resourceId)
                 .error(R .drawable.stackblur_default)
                 .placeholder(R.drawable.stackblur_default)
-                .crossFade(300)
-                .bitmapTransform(new BlurTransformation(context, 23, 4))
+                .transition(DrawableTransitionOptions.withCrossFade(300))
+                .transform(new BlurTransformation(23, 4))
                 .into(imageView);
     }
 }

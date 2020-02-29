@@ -4,7 +4,7 @@ import android.support.annotation.NonNull;
 
 import net.cryallen.androidlib.base.BaseModel;
 import net.cryallen.androidlib.helper.RetrofitCreateHelper;
-import net.cryallen.androidlib.helper.RxHelper;
+import net.cryallen.androidlib.manager.RxHelper;
 import net.cryallen.yiyue.api.ZhihuApi;
 import net.cryallen.yiyue.bean.zhihu.ZhihuDailyDetailBean;
 import net.cryallen.yiyue.contract.detail.ZhihuDetailContract;

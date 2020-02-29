@@ -3,12 +3,12 @@ package net.cryallen.yiyue.model.main;
 import android.support.annotation.NonNull;
 
 import net.cryallen.androidlib.base.BaseModel;
-import net.cryallen.androidlib.config.DBConfig;
-import net.cryallen.androidlib.config.ItemState;
+import net.cryallen.yiyue.config.DBConfig;
+import net.cryallen.yiyue.config.ItemState;
 import net.cryallen.androidlib.helper.RetrofitCreateHelper;
-import net.cryallen.androidlib.helper.RxHelper;
+import net.cryallen.androidlib.manager.RxHelper;
 import net.cryallen.androidlib.utils.AppUtils;
-import net.cryallen.androidlib.utils.DBUtils;
+import net.cryallen.yiyue.utils.DBUtils;
 import net.cryallen.yiyue.api.WeixinApi;
 import net.cryallen.yiyue.bean.weixin.WeixinChoiceListBean;
 import net.cryallen.yiyue.contract.main.WeixinContract;

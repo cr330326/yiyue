@@ -1,4 +1,4 @@
-package net.cryallen.androidlib.utils;
+package net.cryallen.yiyue.utils;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import net.cryallen.androidlib.config.DBConfig;
+import net.cryallen.yiyue.config.DBConfig;
 
 
 /**

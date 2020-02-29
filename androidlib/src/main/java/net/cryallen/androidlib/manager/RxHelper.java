@@ -1,4 +1,4 @@
-package net.cryallen.androidlib.helper;
+package net.cryallen.androidlib.manager;
 
 
 import io.reactivex.BackpressureStrategy;

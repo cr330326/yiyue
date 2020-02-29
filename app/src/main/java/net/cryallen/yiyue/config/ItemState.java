@@ -1,4 +1,4 @@
-package net.cryallen.androidlib.config;
+package net.cryallen.yiyue.config;
 
 /**
  * item状态全局常量

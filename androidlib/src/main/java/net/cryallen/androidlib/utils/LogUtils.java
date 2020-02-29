@@ -2,8 +2,6 @@ package net.cryallen.androidlib.utils;
 
 import android.util.Log;
 
-import net.cryallen.androidlib.BuildConfig;
-
 /**
  * Log工具类
  * Created by chenran on 2018/4/5.
@@ -42,23 +40,38 @@ public class LogUtils {
     /**
      * 是否允许输出log
      */
-    private static int mDebuggable = BuildConfig.IS_SHOW_LOG ? LEVEL_VERBOSE : LEVEL_NONE;
+    private static int mDebuggable = LEVEL_NONE ;
+
+    private LogUtils() {
+        throw new UnsupportedOperationException("u can't instantiate me...");
+    }
 
     /**
      * 设置调试Log开关
-     *
-     * @param isEnable 是否允许log
      */
     public static void setDebuggable(boolean isEnable) {
         mDebuggable = isEnable ? LEVEL_VERBOSE : LEVEL_NONE;
     }
 
     /**
-     * 以级别为 d 的形式输出LOG
+     * 设置调试Log TAG名称
+     */
+    public static void setTagName(String tagName) {
+        mTag = tagName;
+    }
+
+    /**
+     * 以级别为 v 的形式输出LOG
      */
     public static void v(String msg) {
         if (mDebuggable >= LEVEL_VERBOSE) {
             Log.v(mTag, msg);
+        }
+    }
+
+    public static void v(String tag, String str) {
+        if (mDebuggable >= LEVEL_VERBOSE) {
+            Log.v(mTag, "[ " + tag + " ] : " + str);
         }
     }
 
@@ -71,12 +84,24 @@ public class LogUtils {
         }
     }
 
+    public static void d(String tag, String str) {
+        if (mDebuggable >= LEVEL_DEBUG) {
+            Log.d(mTag, "[ " + tag + " ] : " + str);
+        }
+    }
+
     /**
      * 以级别为 i 的形式输出LOG
      */
     public static void i(String msg) {
         if (mDebuggable >= LEVEL_INFO) {
             Log.i(mTag, msg);
+        }
+    }
+
+    public static void i(String tag, String str) {
+        if (mDebuggable >= LEVEL_INFO) {
+            Log.i(mTag, "[ " + tag + " ] : " + str);
         }
     }
 
@@ -112,6 +137,12 @@ public class LogUtils {
         Log.w(mTag, msg, tr);
     }
 
+    public static void w(String tag, String str, Exception e) {
+        if (mDebuggable >= LEVEL_ERROR) {
+            Log.w(mTag, "[ " + tag + " ] : " + str, e);
+        }
+    }
+
     /**
      * 以级别为 e 的形式输出Throwable
      */
@@ -125,6 +156,18 @@ public class LogUtils {
     public static void e(String msg, Throwable tr) {
         if (mDebuggable >= LEVEL_ERROR && null != msg) {
             Log.e(mTag, msg, tr);
+        }
+    }
+
+    public static void e(String tag, String str) {
+        if (mDebuggable >= LEVEL_ERROR) {
+            Log.e(mTag, "[ " + tag + " ] : " + str);
+        }
+    }
+
+    public static void e(String tag, String str,Throwable tr) {
+        if (mDebuggable >= LEVEL_ERROR) {
+            Log.e(mTag, "[ " + tag + " ] : " + str, tr);
         }
     }
 

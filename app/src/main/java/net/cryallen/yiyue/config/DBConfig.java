@@ -1,4 +1,4 @@
-package net.cryallen.androidlib.config;
+package net.cryallen.yiyue.config;
 
 /**
  * Created by chenran on 2018/6/13.

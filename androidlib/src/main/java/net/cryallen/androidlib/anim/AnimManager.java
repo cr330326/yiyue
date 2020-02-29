@@ -2,9 +2,10 @@ package net.cryallen.androidlib.anim;
 
 import android.content.Context;
 import android.os.Build;
-import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.animation.AnimationUtils;
+
+import androidx.annotation.NonNull;
 
 /**
  * Created by chenran on 2018/6/29.

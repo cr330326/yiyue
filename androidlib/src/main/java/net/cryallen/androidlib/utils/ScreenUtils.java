@@ -6,13 +6,16 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import net.cryallen.androidlib.R;
 
 /**
  * 屏幕相关工具类
@@ -130,10 +133,8 @@ public class ScreenUtils {
         if (actionBarHeight != 0)
             return actionBarHeight;
         final TypedValue tv = new TypedValue();
-        if (context.getTheme().resolveAttribute(android.support.v7.appcompat.R.attr
-                .actionBarSize, tv, true)) {
-            if (context.getTheme().resolveAttribute(android.support.v7.appcompat.R.attr
-                    .actionBarSize, tv, true))
+        if (context.getTheme().resolveAttribute(R.attr.actionBarSize, tv, true)) {
+            if (context.getTheme().resolveAttribute(R.attr.actionBarSize, tv, true))
                 actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data, context
                         .getResources().getDisplayMetrics());
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
@@ -141,8 +142,7 @@ public class ScreenUtils {
                 actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data, context
                         .getResources().getDisplayMetrics());
         } else {
-            if (context.getTheme().resolveAttribute(android.support.v7.appcompat.R.attr
-                    .actionBarSize, tv, true))
+            if (context.getTheme().resolveAttribute(R.attr.actionBarSize, tv, true))
                 actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data, context
                         .getResources().getDisplayMetrics());
         }

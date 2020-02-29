@@ -1,6 +1,7 @@
 package net.cryallen.androidlib.adapter.delegate;
 
-import android.support.v4.util.SparseArrayCompat;
+
+import androidx.collection.SparseArrayCompat;
 
 import net.cryallen.androidlib.adapter.common.ViewHolder;
 import net.cryallen.androidlib.adapter.recycler.RecyclerViewHolder;

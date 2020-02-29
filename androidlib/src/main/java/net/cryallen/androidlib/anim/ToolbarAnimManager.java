@@ -1,12 +1,13 @@
 package net.cryallen.androidlib.anim;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.ActionMenuView;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.ActionMenuView;
+import androidx.appcompat.widget.Toolbar;
 
 /**
  * Created by Horrarndoo on 2017/9/11.

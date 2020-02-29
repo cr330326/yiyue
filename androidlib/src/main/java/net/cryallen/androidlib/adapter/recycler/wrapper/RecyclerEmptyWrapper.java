@@ -1,9 +1,10 @@
 package net.cryallen.androidlib.adapter.recycler.wrapper;
 
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import net.cryallen.androidlib.adapter.recycler.RecyclerViewHolder;
 import net.cryallen.androidlib.adapter.recycler.utils.RecyclerWrapperUtils;

@@ -13,9 +13,11 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
-import android.support.v7.app.AlertDialog;
+
+import androidx.appcompat.app.AlertDialog;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.transcode.BitmapBytesTranscoder;
 import com.bumptech.glide.request.FutureTarget;
 
 import io.reactivex.Observable;
@@ -140,17 +142,18 @@ public class ImageUtils {
                                                    final int reqW,
                                                    final int reqH) {
         // 先从本地获取图片,利用Glide压缩图片后获取byte[]
-        return Observable.just(uri)
+        /*return Observable.just(uri)
                 .flatMap(new Function<Uri, ObservableSource<byte[]>>() {
                     @Override
                     public ObservableSource<byte[]> apply(Uri uri) throws Exception {
                         // 在work线程中，同步压缩图片，然后Observable返回
                         // 即将Glide的回调封装成RxJava的Observable
                         FutureTarget<byte[]> future = Glide.with(context)
-                                .load(uri)
                                 .asBitmap()
-                                .toBytes()
-                                .into(reqW, reqH);
+                                .load(uri)
+                                //.transform(byte[].class,new BitmapBytesTranscoder())
+                                //.transcode()
+                                .submit(reqW, reqH);
 
                         byte[] bytes;
                         try {
@@ -162,7 +165,8 @@ public class ImageUtils {
                         }
                         return Observable.just(bytes);
                     }
-                });
+                });*/
+        return null;
     }
 
     /**

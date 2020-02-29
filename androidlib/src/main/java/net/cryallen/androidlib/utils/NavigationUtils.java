@@ -1,7 +1,7 @@
 package net.cryallen.androidlib.utils;
 
-import android.support.design.internal.NavigationMenuView;
-import android.support.design.widget.NavigationView;
+import com.google.android.material.internal.NavigationMenuView;
+import com.google.android.material.navigation.NavigationView;
 
 /**
  * NavigationView utils
